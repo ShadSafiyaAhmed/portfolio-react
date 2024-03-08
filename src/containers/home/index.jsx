@@ -32,7 +32,7 @@ function Home() {
         }}
       >
         <div className="home__contact-me">
-          <button onClick={handleNavigateToContactMePage}>Hire Me</button>
+          <button onClick={handleNavigateToContactMePage}>Contact Me</button>
         </div>
       </Animate>
     </section>
