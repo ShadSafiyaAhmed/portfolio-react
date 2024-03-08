@@ -65,10 +65,10 @@ function Portfolio() {
   const navigate = useNavigate();
   console.log(navigate);
 
-  const handleNavigateToLink = (link) => {
-    console.log(link)
-    navigate(link);
-  };
+  // const handleNavigateToLink = (link) => {
+  //   console.log(link)
+  //   navigate(link);
+  // };
 
   const [filteredValue, setFilteredValue] = useState(1);
   const [hoveredValue, setHoveredValue] = useState(null)
@@ -115,7 +115,7 @@ function Portfolio() {
               onMouseLeave={() => handleHover(null) }
             >
               <div className="portfolio__content__cards__item__img-wrapper">
-                <a>
+                <a href={item.link}>
                   <img alt="dummy data" src={item.image} />
                 </a>
               </div>
