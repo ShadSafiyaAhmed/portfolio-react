@@ -7,10 +7,8 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { data } from "./utils";
-import './styles.scss'
-import {MdWork} from 'react-icons/md'
-
-
+import "./styles.scss";
+import { MdWork } from "react-icons/md";
 
 function Resume() {
   return (
@@ -21,44 +19,46 @@ function Resume() {
       />
       <div className="timeline">
         <div className="timeline__experience">
-          <h3 className="timeline__experience__header-text">Experience</h3>
+          <h3 className="timeline__experience__header-text">
+            Technical Skills
+          </h3>
           <VerticalTimeline
             layout={"1-column"}
             lineColor="var(--yellow-theme-main-color)"
           >
-            {data.experience.map((item, i) => (
+            {data.skills.map((category, i) => (
               <VerticalTimelineElement
                 key={i}
                 className="timeline__experience__vertical-timeline-element"
                 contentStyle={{
-                  background:'none',
-                  color:'var(--yellow-theme-sub-text-color)',
-                  border: '1.5px solid var(--yellow-theme-main-color)'
+                  background: "none",
+                  color: "var(--yellow-theme-sub-text-color)",
+                  border: "1.5px solid var(--yellow-theme-main-color)",
                 }}
-                date={item.period}
-                icon={<MdWork/>}
+                icon={<MdWork />}
                 iconStyle={{
-                  background:'#181818',
-                  color:'var(--yellow-theme-main-color)'
+                  background: "#181818",
+                  color: "var(--yellow-theme-main-color)",
                 }}
               >
                 <div className="vertical-timeline-element-title-wrapper">
-                  <h3>
-                    {item.title}
-                  </h3>
+                  <h3>{category.title}</h3>
 
-                  <h4>
-                    {item.subtitle}
-                  </h4>
+                  <div className="skills-list">
+                    {category.skillsList.map((skill, j) => (
+                      <span key={j} className="skill">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="vertical-timeline-element-title-wrapper-description">{item.description}</p>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
         </div>
 
         <div className="timeline__education">
-          <h3 className= "timeline__education__header-text">Education</h3>
+          <h3 className="timeline__education__header-text">Education</h3>
           <VerticalTimeline
             layout={"1-column"}
             lineColor="var(--yellow-theme-main-color)"
@@ -68,27 +68,25 @@ function Resume() {
                 key={i}
                 className="timeline__education__vertical-timeline-element"
                 contentStyle={{
-                  background:'none',
-                  color:'var(--yellow-theme-sub-text-color)',
-                  border: '1.5px solid var(--yellow-theme-main-color)'
+                  background: "none",
+                  color: "var(--yellow-theme-sub-text-color)",
+                  border: "1.5px solid var(--yellow-theme-main-color)",
                 }}
                 date={item.period}
-                icon={<MdWork/>}
+                icon={<MdWork />}
                 iconStyle={{
-                  background:'#181818',
-                  color:'var(--yellow-theme-main-color)'
+                  background: "#181818",
+                  color: "var(--yellow-theme-main-color)",
                 }}
               >
                 <div className="vertical-timeline-element-title-wrapper">
-                  <h3>
-                    {item.title}
-                  </h3>
+                  <h3>{item.title}</h3>
 
-                  <h4>
-                    {item.subtitle}
-                  </h4>
+                  <h4>{item.subtitle}</h4>
                 </div>
-                <p className="vertical-timeline-element-title-wrapper-description">{item.description}</p>
+                <p className="vertical-timeline-element-title-wrapper-description">
+                  {item.description}
+                </p>
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>

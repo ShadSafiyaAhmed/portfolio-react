@@ -17,10 +17,6 @@ const personalDetail = [
     value: "Abdul Shahadudheen M M",
   },
   {
-    label: "Age",
-    value: 29,
-  },
-  {
     label: "Address",
     value: "Kerala, India",
   },
@@ -30,11 +26,11 @@ const personalDetail = [
   },
   {
     label: "Contact No",
-    value: +917012789631,
+    value: "+917012789631",
   },
   {
     label: "WhatsApp",
-    value: +919497550584,
+    value: "+919497550584",
   },
 ];
 
