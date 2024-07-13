@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaReact } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import './styles.scss';
+import "./styles.scss";
 
 const data = [
   {
@@ -30,16 +30,24 @@ const Navbar = () => {
     setToggleIcon(!toggleIcon);
   };
 
+  const closeMenu = () => {
+    setToggleIcon(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar__container">
-        <Link to="/" className="navbar__container__logo">
+        <Link to="/" className="navbar__container__logo" onClick={closeMenu}>
           <FaReact size={30} />
         </Link>
         <ul className={`navbar__container__menu ${toggleIcon ? "active" : ""}`}>
           {data.map((item, key) => (
             <li key={key} className="navbar__container__menu__item">
-              <Link className="navbar__container__menu__item__links" to={item.to}>
+              <Link
+                className="navbar__container__menu__item__links"
+                to={item.to}
+                onClick={closeMenu}
+              >
                 {item.label}
               </Link>
             </li>
