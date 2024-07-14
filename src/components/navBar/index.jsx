@@ -43,7 +43,11 @@ const Navbar = () => {
         <ul className={`navbar__container__menu ${toggleIcon ? "active" : ""}`}>
           {data.map((item, key) => (
             <li key={key} className="navbar__container__menu__item">
-              <Link className="navbar__container__menu__item__links" to={item.to} onClick={closeMenu}>
+              <Link 
+                className="navbar__container__menu__item__links" 
+                to={item.to} 
+                onClick={closeMenu}  // Ensure menu closes on link click
+              >
                 {item.label}
               </Link>
             </li>

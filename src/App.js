@@ -2,7 +2,7 @@ import React  from 'react';
 import './App.scss';
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Particles from '@tsparticles/react';
-// import { loadFull } from 'tsparticles';
+
 
 import Home from './containers/home';
 import About from './containers/about';
@@ -16,15 +16,7 @@ function App() {
   const location = useLocation();
   console.log(location)
 
-  // const [init, setInit] = useState(false)
 
-  // useEffect(()=> {
-  //   initParticlesEngine(async(main) => {
-  //     await loadFull(main)
-  //   }).then(()=> {
-  //     setInit(true)
-  //   })
-  // },[])
 
   const renderParticleJSInHomePage = location.pathname === "/";
 
